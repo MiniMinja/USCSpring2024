@@ -33,6 +33,6 @@ _Ask_: which are the balls? and which are the boxes?
 - You can think of "objects" as balls and "properties" as boxes.
 
 So the balls are _people_ and the boxes are _anything that has the property of being close together_
-This means I need 6 (or less) "boxes". Draw a picture: [img](pigeonholeex1.png)
+This means I need 6 (or less) "boxes". Draw a picture: ![img](pigeonholeex1.png)
 
 
