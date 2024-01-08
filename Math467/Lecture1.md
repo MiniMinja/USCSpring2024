@@ -1,27 +1,47 @@
 # Lecture 1
 
 vector space					$\mathbf{R}^n$
+
 vectors							$v\in \mathbf{R}^n$
+
 transposed vectors 			$v^T=|v_1, v_2, ..., v_n|$
+
 $n\times n$ matrix					$A = \begin{bmatrix} a_{11} & a_{22} & … & a_{1n} \\ … & … & … & … \\ a_{n1} & a_{n2} & … & a_{nn} \end{bmatrix} = (a_{ij})_{1\leq i,j \leq n}$
+
 $n \times m$ matrix					$A = \begin{bmatrix} a_{11} & a_{22} & … & a_{1m} \\ … & … & … & … \\ a_{n1} & a_{n2} & … & a_{nm} \end{bmatrix} = (a_{ij})_{1\leq i,j \leq n}$
+
 $n\times n$ matrix defines a linear map on $\mathbf{R}^n$
+
 $v = \begin{pmatrix} v_1 \\ v_2 \\ … \\ v_n\end{pmatrix} \mapsto Av \in \mathbf{R}^n$
 where $Av = \begin{pmatrix} (Av)_1 \\ (Av)_2 \\ … \\ (Av)_n \end{pmatrix}$, $(Av)_i = \sum^n_{1} A_{ij}v_i$
+
+
 _Example_
 $n = 2$
+
 $A = \begin{bmatrix} 3 & 4 \\ 1 & 3 \end{bmatrix}$
+
 $Av = \begin{bmatrix} 3 & 4 \\ 1 & 3\end{bmatrix} \begin{pmatrix} v_1 \\ v_2 \end{pmatrix} = \begin{pmatrix} 3v_1 + 4v_2 \\ v_1 + 2v_2 \end{pmatrix}$
 
+
+
 Maps are linear:
+
 1. if $v,w \in R^n$, then $A(v+w) = Av + Aw$
+
 2. if $\alpha \in \mathbf{R}^n$, then $A(\alpha v) = \alpha (Av)$
 
+
 #### Definition (linear product)
+
 $(\cdot, \cdot): \mathbf{R}^n \times \mathbf{R}^n \mapsto \mathbf{R}$
+
 that is if $x, y \in \mathbf{R}^n$, then
+
 $(x, y) \in \mathbf{R}$
+
 if
+
 1. $(x, x) \geq 0$ and $(x, x) = 0$ if and only if $x=0$
 2. $(x, y) = (y, x)$                         (_Symmetry_)
 3. $(x+y, z) = (x, z) + (y, z)$
