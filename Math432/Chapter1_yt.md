@@ -53,6 +53,8 @@ $1, 2, 3, 4, 5, 6, 7, 8, 9, 10$
 Approach:
 Group the numbers like so (in each group, the numbers divide each other)
 
+|#|
+|---|
 |1, 2, 4, 8|
 |3, 6|
 |5, 10|
@@ -76,6 +78,8 @@ _General Solution_
 Make the boxes with the odd numbers
 
 (i.e. 
+|#|
+|---|
 |1|
 |3|
 |5|
@@ -86,6 +90,8 @@ Make the boxes with the odd numbers
 On each box we can put $2^i$ times the first number.
 
 (i.e. 
+|#|
+|---|
 |1, 2, 4, ...|
 |3, $2 \cdot 3$, $2^2 \cdot 3$, ...|
 |5, $2 \cdot 5$, $2^2 \cdot 5$, ...|
