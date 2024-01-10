@@ -43,6 +43,7 @@ For a permutation $\Pi$ let $I(\Pi) =$ the longest increasing subsequence of $\P
 |$1, 2, 3$  |  3       | 
 |1, 3, 2  |  2      |
 ...
+
 So the average of $I(\Pi) = 2$ for $n=3$
 
 #### _Claim_
@@ -71,3 +72,192 @@ $1, 2,. ...n$
 in some order so say:
 $4, 2, 3, 6, 5, 1, 7$
 We can cut into piles....
+
+---
+
+_Last time_:
+$I(\Pi)$
+: the longest increasing subsequence of a permutation of $\Pi$
+
+For example: $\Pi = 4, 2, 5, 1, 6, 7, 9, 8, 3$, then $I(\Pi) = 5$ (Subsequence: 2, 5, 6, 7, 9).
+
+# Who Cares?
+
+## Reason 1: Patience Sorting
+
+Have cards $1, ..., n$. Deck is shuffled giving you a permutation $\Pi$. Cards are turns up one at a time and placed according to rule:
+
+* a low card may be placed on top of a higher card or else can start a new pile to right of existing piles.
+
+Goal: have as few piles as possible
+
+_ex_
+
+$$
+\Pi = 4, 2, 3, 6, 5, 1, 7
+$$
+
+|Piles|
+|---|
+|4, 2, 1|
+|3|
+|6 5|
+|7|
+
+Greedy Strategy
+: Place cards as far to the left as possible
+
+___Theorem___
+
+1. Greedy strategy is optimal
+
+2. with greedy strategy, the number of piles is $I(\Pi)$
+
+
+___Remarks___
+So we now have a way of computing a fast way for $I(\Pi)$
+
+## Reason 2: Airline Boarding
+
+Consider the following model:
+
+1. airplane has 1 seat per row
+
+2. Contribution to boarding time is: time it takes to store luggage. Assume
+this takes 1 unit of time.
+
+3. Passengers are very thin and move quickly compared to storage time.
+
+4. The plane is booked ($n$ passengers, $n$ rows)
+
+_ex_
+
+$$
+4, 2, 3, 6, 5, 1, 7
+$$
+
+|Seat No.|Seats|
+|---|---|
+|1| |
+|2| |
+|3| |
+|4| |
+|5| |
+|6| |
+|7| |
+
+_time 1_) 
+
+* 4 moves to his seat
+
+* 2 moves to the seat (blocking, 3, 6, 5)
+
+* 1 moves to seat (blocking 7)
+
+* 4, 2, 1 store their luggage
+
+|Seat No.|seat found|
+|---|---|
+|1|*|
+|2|*|
+|3| |
+|4|*|
+|5| |
+|6| |
+|7| |
+
+_time 2_)
+
+* 3 moves to seat (blocking 6, 5, 7)
+
+* 3 stores luggage
+
+|Seat No.|seat found|
+|---|---|
+|1|*|
+|2|*|
+|3|*|
+|4|*|
+|5| |
+|6| |
+|7| |
+
+_time 3_)
+
+* 6 moves to seat
+
+* 5 moves to seat (blocking 7)
+
+* 5, 6 store their luggage
+
+|Seat No.|seat found|
+|---|---|
+|1|*|
+|2|*|
+|3|*|
+|4|*|
+|5|*|
+|6|*|
+|7| |
+
+_time 4_)
+
+* 7 moves to seat and stores luggage
+
+|Seat No.|seat found|
+|---|---|
+|1|*|
+|2|*|
+|3|*|
+|4|*|
+|5|*|
+|6|*|
+|7|*|
+
+*Boarding Time of $\Pi$:* 4
+
+___Theorem___
+The boarding time of $\Pi$ is $I(\Pi)$.
+
+### Example
+
+Have a group of $n$ people. Some handshaking takes place. No pair shakes hands more than once. Show that there must be 2 people who have shaken the same number of hands.
+
+___Proof (by contradiction)___
+Assume there aren't 2 people who have shaken the same number of hands. So must have
+
+|Person|# of handshakes|
+|---|---|
+|Alice|0|
+|Jason|1|
+|...|...|
+|Bob|n-1|
+
+To see that this is impossible, ask _have Alice and Bob shaked hands?_ Answer is no. Alice shakes 0 hands. And answer is yes. Bob shaked everyone's hand. Contradiction because the answer can't be both no and yes. 
+
+### Example
+
+___Theorem___
+For any $n$ positive integers, there is a subset of them whose sum is divisible by $n$.
+
+___Proof___
+Let the numbers be $a_1, a_2, …, a_n$. Consider the "boxes" 0 - $n-1$. Consider the subsets
+
+$$
+\{a_1\}, \{a_1, a_2\}, ..., \{a_1, ..., a_n\}
+$$
+
+and put each subset in the box corresponding to remainder when you divide the sum of elements in subset by $n$.
+
+_Note:_ if any of the subsets goes into box 0, then the sum of elements in the subset are divisible by $n$, and we're done.
+
+If none of them go to box 0, Then we have $n$ subsets in $n-1$ boxes. So by the pigeonhole principle, one of these boxes corresponds to two subsets, call them
+
+$$
+\{a_1,...,a_r\}, \{a_1,...,a_s\}
+$$
+
+where $r < s$.
+
+Thus, $a_1 + … + a_r$, $a_1+...+a_s$ have the same remainder when you divide by $n$. So $(a_1+...+a_s) - (a_1 + … + a_r)$ is a multiple of $n$. So $a_{r+1} + a_{r+2}+...+a_s$ is a multiple of n as needed.
+

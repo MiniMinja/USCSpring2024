@@ -12,6 +12,7 @@
 $$
 \innerprod{\boldx}{\boldy}_2 = 2x_1 y_1 + 3x_2 y_1 + 3x_1 y_1 + 5x_2 y_2
 $$
+
 **1. Positivity**
 
 $$
@@ -23,6 +24,7 @@ $$
 = 2(x_1 + \frac{3}{2}x_2)^2 + \frac{1}{2}x_2^2 \geq 0
 \end{aligned} 
 $$
+
 It's easy to see that if $x=0$, then $\innerprod{\boldx}{\boldx}_2 = 0$
 
 Now suppose $\innerprod{\boldx}{\boldx}_2 = 2(x_1 + \frac{3}{2}x_2)^2 + \frac{1}{2}x_2^2= 0$. That means
