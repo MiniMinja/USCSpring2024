@@ -127,19 +127,24 @@ $$
 
 # 3.9 
 
-$R(A)$:
+_**$R(A)$**_:
 
-Existence of 0:
+**Existence of 0**:
 
 $R(\mathbf{0}) = 0$ for any $m\times n$ zero matrix $\mathbf{0}$
 
-Closure under vector addition:
+**Closure under vector addition**:
 
-Let $R(A) \in \R^m$ and $R(B) \in \R^m$ for $m \times n$ matrices $A$ and $B$.
+Let $R(A)$ $\in$ $\R^m$ and $R(B) \in \R^m$ for $m \times n$ matrices $A$ and $B$.
 
 We can see that the span $\{Ax + By$ for any $x, y \in \R^m\}$ $\in \R^m$. Since $Ax$ and $By$ are both vectors $\in \R^m$, and vectors are closed under vector addition, $Ax + By \in \R^m$. 
 
 Therefore, $R(A) + R(B) \in \R^m$ and thus the range is closed under vector addition.
+
+**Closure under scalar multiplication**:
+
+
+
 
 
 

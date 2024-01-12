@@ -3,7 +3,8 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-]{book}
+  12pt,
+]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
 \ifPDFTeX
@@ -40,6 +41,7 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+"\\newcommmand{\\boldx}{\\mathbf{x}}"
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -47,31 +49,152 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
+  pdftitle={Homework 1},
+  pdfauthor={Minyoung Heo},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\author{}
-\date{}
+\title{Homework 1}
+\author{Minyoung Heo}
+\date{Jan 9 2024}
 
 \begin{document}
-\frontmatter
+\maketitle
 
-\mainmatter
-\section{Homework 1}\label{homework-1}
+\chapter{2.8}\label{section}
 
-\textbf{Author:} \textbf{Minyoung Heo}
+\newcommand{\boldx}{\mathbf{x}}
+\newcommand{\boldy}{\mathbf{y}}
+\newcommand{\boldz}{\mathbf{z}}
+\newcommand{\innerprod}[2]{\left<#1, #2\right>}
 
-\section{2.8}\label{section}
+\[
+\left<\mathbf{x}, \mathbf{y}\right>_2 = 2x_1 y_1 + 3x_2 y_1 + 3x_1 y_1 + 5x_2 y_2
+\]
+
+\textbf{1. Positivity}
+
+\[
+\begin{aligned}
+\left<\mathbf{x}, \mathbf{x}\right>_2 = 2x_1 x_1 + 3x_1 x_2 + 3x_1 x_2 + 5x_2^2 \\
+= 2x_1^2 + 6x_1 x_2 + 5x_2^2 \\
+= 2(x_1^2 + 3x_1 x_2 + \frac{5}{2} x_2^2) \\
+= 2(x_1^2 + 3x_1 x_2 + \frac{9}{4} x_2^2 + \frac{1}{4}x_2^2) \\
+= 2(x_1 + \frac{3}{2}x_2)^2 + \frac{1}{2}x_2^2 \geq 0
+\end{aligned} 
+\]
+
+It's easy to see that if \(x=0\), then \(\left<\mathbf{x}, \mathbf{x}\right>_2 = 0\)
+
+Now suppose \(\left<\mathbf{x}, \mathbf{x}\right>_2 = 2(x_1 + \frac{3}{2}x_2)^2 + \frac{1}{2}x_2^2= 0\). That means
+
+\(2(x_1 + \frac{3}{2}x_2)^2 = -\frac{1}{2}x_2^2\) where \(-\frac{1}{2}x_2^2 \leq 0\) and its equality is only when \(x_2 = 0\).
+
+Plugging it back in, \(2(x_1 + \frac{3}{2}x_2)^2 \leq 0\) can only be true when \(2(x_1 + \frac{3}{2}x_2^2)^2 = 0\) so \(\mathbf{x}= 0\)
+
+\textbf{2. Symmetry}
+
+\[
+\begin{aligned}
+\left<\mathbf{x}, \mathbf{y}\right>_2 = 2x_1 y_1 + 3x_2 y_1 + 3x_1 y_2 + 5x_2 y_2 \\
+= 2y_1 x_1 + 3y_1 x_2 + 3y_2 x_1 + 5y_2 x_2 \\
+= 2y_1 x_1 + 3y_2 x_1 + 3y_1 x_2 + 5y_2 x_2 \\
+= \left<\mathbf{y}, \mathbf{x}\right>_2
+\end{aligned}
+\]
+
+\textbf{3. Additivity}
+
+\[
+\begin{aligned}
+\left<\mathbf{x}+\mathbf{y}, \mathbf{z}\right>_2 = 2(x_1 + y_1) z_1 + 3(x_2 + y_2)z_1 + 3(x_1 + y_1)z_2 + 5(x_2 + y_2)z_2 \\
+= 2x_1 z_2 + 3x_2 z_1 + 3x_1 z_2 + 5x_2 z_2 + 2y_1 z_1 + 3y_2 z_1 + 3y_1 z_2 + 5y_2 z_2 \\
+= \left<\mathbf{x}, \mathbf{z}\right> + \left<\mathbf{y}, \mathbf{z}\right>
+\end{aligned}
+\]
+
+\textbf{4. Homogeneity}
+
+\[
+\begin{aligned}
+\left<r\mathbf{x}, \mathbf{y}\right> = 2(rx_1)y_1 + 3(rx_2)(y_1) + 3(rx_1)y_2 + 5(rx_2)y_2 \\
+= r(2x_1 y_1 + 3x_2 y_1 + 3x_1 y_2 + 5x_2 y_2) \\
+= r \left<\mathbf{x}, \mathbf{y}\right>
+\end{aligned}
+\]
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\section{2.9}\label{section-1}
+\chapter{2.9}\label{section-1}
+
+\[
+\begin{aligned}
+\mathbf{x}= (\mathbf{x}- \mathbf{y}) + \mathbf{y}\\
+||\mathbf{x}|| = ||(\mathbf{x}- \mathbf{y}) + \mathbf{y}|| \leq ||\mathbf{x}- \mathbf{y}|| + ||\mathbf{y}|| \\
+\rightarrow ||\mathbf{x}- \mathbf{y}|| \geq ||\mathbf{x}|| - ||\mathbf{y}||
+\end{aligned}
+\]
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\section{2.10}\label{section-2}
+\chapter{2.10}\label{section-2}
+
+Since \(||\mathbf{x}- \mathbf{y}|| < \delta\),
+
+\[
+\left| ||\mathbf{x}|| - ||\mathbf{y}|| \right| < \delta
+\] And we can let \(\delta = \epsilon\).
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\backmatter
+\chapter{3.8}\label{section-3}
+
+\[
+\begin{aligned}
+A = \begin{bmatrix}
+4 & -2 & 0 \\
+2 & 1 & -1 \\
+2 & -3 & 1
+\end{bmatrix} = \begin{bmatrix}
+4 & -2 & 0 \\
+0 & 2 & -1 \\
+0 & -2 & 1
+\end{bmatrix} = \begin{bmatrix}
+4 & -2 & 0 \\
+0 & 2 & -1 \\
+0 & 0 & 0
+\end{bmatrix} = \begin{bmatrix}
+4 & 0 & -1 \\
+0 & 2 & -1 \\
+0 & 0 & 0
+\end{bmatrix}  \\
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+2x_2 = x_3 \rightarrow x_2 = \frac{1}{2} x_3\\
+4x_1 = x_3\rightarrow x_1 = \frac{1}{4}x_3 \\
+\rightarrow N(A) = \text{span of } \Biggl\{ \begin{bmatrix} \frac{1}{2} \\ \frac{1}{4} \\ 1 \end{bmatrix} \Biggl\}
+\end{aligned}
+\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\chapter{3.9}\label{section-4}
+
+\(R(A)\):
+
+\textbf{Existence of 0}:
+
+\(R(\mathbf{0}) = 0\) for any \(m\times n\) zero matrix \(\mathbf{0}\)
+
+\textbf{Closure under vector addition}:
+
+Let \(R(A)\) \(\in\) \(\R^m\) and \(R(B) \in \R^m\) for \(m \times n\) matrices \(A\) and \(B\).
+
+We can see that the span \(\{Ax + By\) for any \(x, y \in \R^m\}\) \(\in \R^m\). Since \(Ax\) and \(By\) are both vectors \(\in \R^m\), and vectors are closed under vector addition, \(Ax + By \in \R^m\).
+
+Therefore, \(R(A) + R(B) \in \R^m\) and thus the range is closed under vector addition.
+
 \end{document}
