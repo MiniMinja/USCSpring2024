@@ -89,3 +89,57 @@ $$
 And we can let $\delta = \epsilon$.
 
 ---
+
+# 3.8
+
+$$
+\begin{aligned}
+A = \begin{bmatrix}
+4 & -2 & 0 \\
+2 & 1 & -1 \\
+2 & -3 & 1
+\end{bmatrix} = \begin{bmatrix}
+4 & -2 & 0 \\
+0 & 2 & -1 \\
+0 & -2 & 1
+\end{bmatrix} = \begin{bmatrix}
+4 & -2 & 0 \\
+0 & 2 & -1 \\
+0 & 0 & 0
+\end{bmatrix} = \begin{bmatrix}
+4 & 0 & -1 \\
+0 & 2 & -1 \\
+0 & 0 & 0
+\end{bmatrix}  \\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+2x_2 = x_3 \rightarrow x_2 = \frac{1}{2} x_3\\
+4x_1 = x_3\rightarrow x_1 = \frac{1}{4}x_3 \\
+\rightarrow N(A) = \text{span of } \Biggl\{ \begin{bmatrix} \frac{1}{2} \\ \frac{1}{4} \\ 1 \end{bmatrix} \Biggl\}
+\end{aligned}
+$$
+
+
+---
+
+# 3.9 
+
+$R(A)$:
+
+Existence of 0:
+
+$R(\mathbf{0}) = 0$ for any $m\times n$ zero matrix $\mathbf{0}$
+
+Closure under vector addition:
+
+Let $R(A) \in \R^m$ and $R(B) \in \R^m$ for $m \times n$ matrices $A$ and $B$.
+
+We can see that the span $\{Ax + By$ for any $x, y \in \R^m\}$ $\in \R^m$. Since $Ax$ and $By$ are both vectors $\in \R^m$, and vectors are closed under vector addition, $Ax + By \in \R^m$. 
+
+Therefore, $R(A) + R(B) \in \R^m$ and thus the range is closed under vector addition.
+
+
+
