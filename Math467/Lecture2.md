@@ -4,13 +4,6 @@
 
 # Inner Products
 
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\bv}{\mathbf{v}}
-\newcommand{\bw}{\mathbf{w}}
-\newcommand{\ip}[2]{\left<#1, #2\right>}
-\newcommand{\C}{\mathbb{C}}
-
-
 vectorspace $\mathbb{R}^n$
 
 inner product:

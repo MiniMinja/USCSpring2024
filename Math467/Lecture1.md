@@ -147,7 +147,7 @@ $$
 \newcommand{\boldy}{\mathbf{y}}
 
 $$
-||\boldx + \boldy|| \leq ||\boldx|| + ||\boldy||
+||\bx + \by|| \leq ||\bx|| + ||\boldy||
 $$
 
 ### Homework

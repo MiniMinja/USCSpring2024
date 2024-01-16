@@ -57,7 +57,6 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-\newcommmand{\boldx}{\mathbf{x}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -72,6 +71,12 @@
 \date{}
 
 \begin{document}
+
+\newcommand{\bx}{\mathbf{x}},
+\newcommand{\by}{\mathbf{y}},
+\newcommand{\bz}{\mathbf{z}},
+\newcommand{\ip}[2]{\left<#1, #2\right>}
+\newcommand{\R}{\mathbb{R}}
 
 \chapter{Lecture 1}\label{lecture-1}
 
@@ -224,7 +229,12 @@ w = \frac{y}{||y||} \rightarrow = 1 \\
 
 \subsection{Triangle Inequality}\label{triangle-inequality}
 
-\(\x\)
+\newcommand{\boldx}{\mathbf{x}}
+\newcommand{\boldy}{\mathbf{y}}
+
+\[
+||\bx + \by|| \leq ||\bx|| + ||\mathbf{y}||
+\]
 
 \subsection{Homework}\label{homework}
 
