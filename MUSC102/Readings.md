@@ -1,5 +1,6 @@
 
 % Readings for Chapter 1 and 2
+% MUSC 102
 
 # Reading
 

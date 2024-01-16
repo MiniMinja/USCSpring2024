@@ -8,6 +8,7 @@
 \newcommand{\boldy}{\mathbf{y}}
 \newcommand{\boldz}{\mathbf{z}}
 \newcommand{\innerprod}[2]{\left<#1, #2\right>}
+\newcommand{\R}{\mathbb{R}}
 
 $$
 \innerprod{\boldx}{\boldy}_2 = 2x_1 y_1 + 3x_2 y_1 + 3x_1 y_1 + 5x_2 y_2
@@ -127,7 +128,7 @@ $$
 
 # 3.9 
 
-_**$R(A)$**_:
+_**$R(A)$ is a subspace of $\R^m$**-:
 
 **Existence of 0**:
 
@@ -135,16 +136,122 @@ $R(\mathbf{0}) = 0$ for any $m\times n$ zero matrix $\mathbf{0}$
 
 **Closure under vector addition**:
 
-Let $R(A)$ $\in$ $\R^m$ and $R(B) \in \R^m$ for $m \times n$ matrices $A$ and $B$.
+Let $R(A)$ $\in$ $\mathbb{R}^m$ and $R(B) \in \mathbb{R}^m$ for $m \times n$ matrices $A$ and $B$.
 
-We can see that the span $\{Ax + By$ for any $x, y \in \R^m\}$ $\in \R^m$. Since $Ax$ and $By$ are both vectors $\in \R^m$, and vectors are closed under vector addition, $Ax + By \in \R^m$. 
-
-Therefore, $R(A) + R(B) \in \R^m$ and thus the range is closed under vector addition.
+For $R(A) + R(B) = \{Ax + By: x, y \in \R^m\}$, we can see that the span $\{Ax + By$ for any $x, y \in \R^m\}$ $\in \R^m$. Therefore, $R(A) + R(B) \in \R^m$ and thus the range is closed under vector addition.
 
 **Closure under scalar multiplication**:
 
+Let $R(A) \in \R^m$ and $\alpha \in \R$ for some $m \times n$ matrix A. 
+
+$$
+\alpha \cdot R(A) = \{\alpha Ax : x \in \R^n\}
+$$
+$\alpha A$ is still a $m \times n$ matrix and projects the $x$ onto the space $\R^m$. → $\alpha A x \in \R^m$ for any $x \in \R^n$ so $\alpha \cdot R(A) \in \R^m$ and thus the range is closed under scalar multiplication.
+
+_**$N(A)$ is a subspace of $\R^n$**_:
+
+**Existence of 0**:
+
+$N(A)$ for some $n \times n$ matrix A such that its cols are linearly independent, $N(A) = 0$.
+
+**Closure under vector addition**:
+
+Let $N(A), N(B) \in \R^n$ for $m\times n$ matrices $A$ and $B$.
+
+$$
+N(A) + N(B) = \{x + y \in \R^n : Ax = 0, By = 0\} \\
+$$
+
+We can see that such vector $z = x + y \in \R^n$, thus $N(A) + N(B) \in \R^n$, and is closed under vector addition.
+
+**Closure under scalar multiplication**
+
+Let $N(A) \in R^n$ for some $m \times n$ matrix $A$ and $\alpha \in \R$.
+
+$$
+\alpha \cdot N(A) = \{\alpha x : A(\alpha x) = 0, x \in \R^n\}
+$$
+Both $x$ and $\alpha x$ are $\in \R^n$, so $\alpha \cdot N(A) \in \R^n$, so the nullspace is closed under scalar multiplication.
+
+---
+
+# 3.10
 
 
 
+---
 
+# 3.15
 
+$$
+\begin{aligned}
+\begin{pmatrix}x_1 & x_2\end{pmatrix} \begin{bmatrix} 1 & -8 \\ 1 & 1 \end{bmatrix} \begin{pmatrix} x_1 \\ x_2\end{pmatrix} \\
+= \begin{bmatrix}x_1 + x_2 & -8x_1 + x_2 \end{bmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} \\
+= x_1^2 + x_1 x_2 - 8x_1 x_2 + x_2^2 \\
+= x_1^2 - 7x_1 x_2 + x_2^2 \quad (\text{Use this one for calculations})\\
+= x_1^2 - 7x_1 x_2 + \frac{49}{4}x_2^2 - \frac{45}{4}x_2^2 \\
+= (x_1 - \frac{7}{2}x_2)^2 - \frac{45}{4}x_2^2
+\end{aligned}
+$$
+
+All we need to do is first check for cases where $(x_1 - \frac{7}{2}x_2)^2 - \frac{45}{4}x_2^2 < 0$ and then check for $(x_1 - \frac{7}{2}x_2)^2 - \frac{45}{4}x_2^2 > 0$.
+
+For $(x_1 - \frac{7}{2}x_2)^2 - \frac{45}{4}x_2^2 < 0$ :
+
+$$
+\begin{aligned}
+(x_1-\frac{7}{2}x_2)^2 < \frac{45}{4} x^2, \text{so } \\
+-\sqrt{\frac{45}{4}}x_2 < x_1 - \frac{7}{2}x_2 < \sqrt{\frac{45}{4}}x_2 \\
+\rightarrow \frac{7-\sqrt{45}}{2}x_2 < x_1 < \frac{7+\sqrt{45}}{2}x_2
+\end{aligned}
+$$
+
+An example of this is when $x_1 = \frac{7}{2}x_2$ → $x = \begin{pmatrix}\frac{7}{2} \\ 1\end{pmatrix}$. Plugging this into $x_1^2 - 7x_1 x_2 + x_2^2$, we get $-\frac{45}{4} < 0$.
+
+For $(x_1 - \frac{7}{2}x_2)^2 - \frac{45}{4}x_2^2 > 0$ :
+
+$$
+\begin{aligned}
+(x_1-\frac{7}{2}x_2)^2 > \frac{45}{4} x^2, \text{so } \\
+x_1 - \frac{7}{2}x_2 < -\sqrt{\frac{45}{4}}x_2 \cup x_1 - \frac{7}{2}x_2 > \sqrt{\frac{45}{4}}x_2 \\
+\rightarrow x_1 < \frac{7-\sqrt{45}}{2}x_2 \cup x_1 > \frac{7+\sqrt{45}}{2}x_2
+\end{aligned}
+$$
+
+An example of this is when $x_1 = \frac{100}{2}x_2$ → $x = \begin{pmatrix}\frac{100}{2} \\ 1\end{pmatrix}$. Plugging this into $x_1^2 - 7x_1 x_2 + x_2^2$, we get $9301 > 0$.
+
+Therefore this is **indefinite**.
+
+---
+
+# 3.16
+
+$$
+\begin{aligned}
+\Delta_1 = 2 \\
+\Delta_2 = \begin{vmatrix} 2 & 2 \\ 2&2 \end{vmatrix} = 0\\
+\Delta_3 = \begin{vmatrix} 2 & 2 & 2 \\ 2& 2& 2 \\2&2&0\end{vmatrix} = 2\begin{vmatrix}2&2\\2&0\end{vmatrix} - 2\begin{vmatrix}2&2\\2&0\end{vmatrix} + 2\begin{vmatrix}2&2\\2&2\end{vmatrix} = 2\begin{vmatrix}2&2\\2&2\end{vmatrix} = 0
+\end{aligned}
+$$
+
+And all of them are nonnegative.
+
+Looking at the quadratic form $x^T \begin{bmatrix}2 & 2 & 2\\2&2&2\\2&2&0\end{bmatrix} x$:
+
+$$
+\begin{aligned}
+x^T \begin{bmatrix}2 & 2 & 2\\2&2&2\\2&2&0\end{bmatrix} x  =\begin{bmatrix}2x_1+2x_2+2x_3 & 2x_1 + 2x_2+2x_3 & 2x_1 + 2x_2 \end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix} \\
+= 2x_1^2 + 2x_1x_2 + 2x_1x_3 + 2x_1x_2 + 2x_2^2 + 2x_2x_3 + 2x_1x_3 + 2x_2x_3 \\
+= 2x_1^2 + 2x_2^2 + 4x_1x_2 + 4x_1x_3 + 4x_2x_3 \\
+= 2(x_1 + x_2)^2 + 4x_3(x_1 + x_2)
+\end{aligned}
+$$
+
+Now we try to make $x_1 + x_2 < -2x_3$, while making sure $|x_1 + x_2| < |2x_3|$. So by setting $x_3 = 1$, we can easily produce an example vector $x = \begin{bmatrix}-\frac{1}{10} \\ -\frac{1}{10} \\ 1\end{bmatrix}$. If we plug this back into $2(x_1 + x_2)^2 + 4x_3(x_1 + x_2)$, we get 
+
+$$
+2(-0.2)^2 + 4(1)(0.2) = 0.08 - 0.8 < 0
+$$
+
+As we can see, there exists a vector such that it's not positive definite, so $A$ is not positive definite.
