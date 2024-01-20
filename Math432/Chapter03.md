@@ -175,5 +175,87 @@ $$
 \frac{\frac{n!}{(n-k)!}}{k!} = \begin{pmatrix}n\\k\end{pmatrix}
 $$
 
+_ex_)
+
+$$
+\begin{pmatrix}n\\k\end{pmatrix} = \begin{pmatrix}n-1\\k\end{pmatrix} + \begin{pmatrix}n-1\\k-1\end{pmatrix}
+$$
+
+_Proof 1 (combinatorial - just counting, no formulas)_)
+
+Consider the $k$ element subsets of $\{1, 2, …, n\}$. On one hand, this is equal to $\begin{pmatrix}n\\k\end{pmatrix}$. On the other hand, have 2 possibilities:
+
+1. The subset contains 1
+
+2. The subset does not contain 1
+
+(1) occurs in $\begin{pmatrix}n-1\\k-1\end{pmatrix}$ ways (choose $k-1$ elements from $\{2, ..., n\}$)
+
+(2) occurs in $\begin{pmatrix}n-1\\k\end{pmatrix}$ ways (choose $k$ elements from $\{2, ..., n\}$)
+
+which completes the proof.
+
+_Proof 2_)
+
+$$
+\begin{aligned}
+\begin{pmatrix}n-1\\k\end{pmatrix} + \begin{pmatrix}n-1\\k-1\end{pmatrix} = \frac{(n-1)!}{k!(n-k-1)!} + \frac{(n-1)!}{(k-1)!(n-k)!} \\
+= \frac{(n-1)!(n-k)}{k!(n-k)!} + \frac{(n-1)!k}{k!(n-k)!} \\
+= \frac{(n-1)!n}{k!(n-k)!} \\
+= \frac{n!}{k!(n-k)!} \\
+= \begin{pmatrix}n\\k\end{pmatrix}
+\end{aligned}
+$$
+
+### Some applications
+
+#### Counting lattice paths
+
+_ex_ 4 x 7
+
+![](lattice.png)
+
+Count the paths from A to B which at each step, go up or go right.
+
+![](lattice_ex.png)
+
+This path is (URRRURRRU).
+
+_How many such paths are there?_
+
+Answer is $\begin{pmatrix}9\\3\end{pmatrix}$ since you have 9 steps and choose which 3 of them go up. What about $\begin{pmatrix}9\\6\end{pmatrix}$? Well, $\begin{pmatrix}9\\3\end{pmatrix} = \begin{pmatrix}9\\6\end{pmatrix}$.
+
+#### Theorem
+
+There are $\begin{pmatrix}n-1\\r-1\end{pmatrix}$ distinct positive integer valued vectors 
+
+$$
+(x_1, … x_r)
+$$
+
+such that $x_1 + … + x_r = n$.
+
+[Solution]{.underline}
+
+Use the "stars and bars" argument
+
+i.e.
+
+$**|***|*|* \rightarrow 2+ 3 + 1 + 1 = 7$
 
 
+Have to place $r-1$ bars in some of the $n-1$ positions. So the answer is $\begin{pmatrix}n-1\\r-1\end{pmatrix}$.
+
+#### Slight Variation
+
+There are $\begin{pmatrix}n+r-1\\r-1\end{pmatrix}$ distinct non-negative (the other one was positive) integer value vectors
+
+$$
+(x_1, … x_r)
+$$
+
+such that $x_1 + … + x_r = n$.
+
+[Solution]{.underline}
+
+Let $y_1=x_1+1, y_2=x_2+1...y_r = x_r+1$. Then $(y_1,...,y_r)$ is a positive integer valued vector satisfying $y_1 + … + y_r = n + r$. We can now use the previous theorem, and the solution is $\begin{pmatrix}n+r-1\\r-1\end{pmatrix}$.
