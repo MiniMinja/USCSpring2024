@@ -33,7 +33,7 @@ set(gca,'XTickLabel',[]);
 set(gca,'ZTickLabel',[]);
 set(gca, 'visible', 'off'); 
 
-movie(Animation,1,1)
+movie(Animation,1,5)
 
 end
 

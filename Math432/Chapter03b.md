@@ -79,16 +79,84 @@ _Table_:
 |---|---|---|---|---|---|---|---|---|
 | |1|$\frac{3}{2}$|$\frac{5}{3}$|2|2|$\frac{7}{3}$|$\frac{16}{7}$|$\frac{5}{2}$|
 
-_Exercise before next time_
+### Example
 
-Let $a$ be a graph
+Let $g$ be a graph
 
 ![](DogGraph.png)
 
-Let $d(v)$ = degree of $v$ (= number of edges with v as an end point)
+Let $d(v)$ = degree of $v$ (= number of edges which use the vertex $v$)
 
-_Prove_ 
+_Claim_ 
 
 $$
 2 (\text{ number of edges }) = \sum_v d(v)
 $$
+
+_Proof_
+
+Let $S \subseteq E$ consisting of ordered pairs ($v$, $e$) where $v$ is and endpoint of the edge $e$. On one hand
+
+$$
+|S| = \sum_v d(v)
+$$
+
+On the other hand,
+
+$$
+|S| = \sum_e 2 = 2|E|
+$$
+
+Since each edge has 2 endpoints, so the claim follows.
+
+### Application
+
+Consider random walk on the vertices of a graph $g$. 
+
+![](DogGraph.png)
+
+
+If you're at a given vertex, move to a random neighboring vertex. What happens in the long run? 
+
+_Fact_) for "aperiodic graphs", chance you're at vertex $v$ after many steps converges to 
+
+$$
+\frac{d(v)}{2|E|}
+$$
+
+
+So summing this over $v$ must give 1, which we just proved. 
+
+### Example
+
+Consider a $(n+1) \times (n+1)$ grid of dots
+
+![](GridOfDots.png)
+
+How many dots are in the grid? On one hand, it's $(n+1)^2$. On the other hand, you can count as follows:
+
+![](GridOfDotsDiagonal.png)
+
+You have this diagonal $(n+1)$ dots. 
+
+![](GridOfDotsDiagonals.png)
+
+You have all these diagonals. So counting this way gives that the number of dots is
+
+$$
+(n+1) + 2\sum_{i=1}^ni
+$$
+
+Thus
+
+$$
+(n+1)^2 = (n+1 + 2 \sum_{i=1}^n i)
+$$
+
+Rearranging this gives
+
+$$
+\sum_{i=1}^n i = \frac{n(n+1)}{2}
+$$
+
+We proved this by induction earlier. One might call this version a combinatorial proof.

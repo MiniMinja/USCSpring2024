@@ -1,0 +1,20 @@
+gens = 10;
+n = 5;
+Init_Config = zeros(n);
+
+Init_Config(3, 3) = 1;
+Init_Config(3, 4) = 1;
+Init_Config(3, 2) = 1;
+
+%%
+global log
+log = fopen("outputlog.txt", "w");
+fprintf(log, "%d %d %d %d %d %d %d %d %d %d\n", Init_Config);
+
+A = Life(Init_Config, gens);
+mov = Life_Animation_alt(A, 1);
+
+v = VideoWriter('blinkerlife.avi');
+open(v)
+writeVideo(v, mov);
+close(v);
