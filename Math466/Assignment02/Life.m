@@ -1,3 +1,19 @@
+%   A Function that Simulates the Game of Life
+%
+% Input:
+%
+%   Init_Config: An nxn matrix of cells containing either a 1 (alive) or 0
+% (dead). Acts as the initial configuration of the grid and is the first
+% one on the series of grids.
+%
+%   Generations: An integer containing the number of "frames" this
+% simulation plays through. 
+%
+% Output:
+%
+%   Simulation: A 3-dimensional matrix containing Generations "frames" of
+% nxn grids (nxnxGenerations) of the Game of Life being simulated on each
+% "frame"
 function [Simulation] = Life(Init_Config, Generations)
     n = size(Init_Config, 1);
     A = zeros(n+2, n+2, Generations);
@@ -15,7 +31,7 @@ function [Simulation] = Life(Init_Config, Generations)
         % A_g is the gth generation of A
         A_g = A(:,:,g);
 
-        % need to check (i+1, j+1) instead of (i, j)
+        % need to check (2, n+1) instead of (1, n)
         % because A has a "border" of zeros so we
         % really need to access indices 2-(n+1)
         for i=2:n+1

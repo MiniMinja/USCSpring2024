@@ -126,3 +126,115 @@ _Exercise: Prove this combinatorially_
 
 _**Algebraic Proof**_
 
+right hand side
+
+$$
+\begin{aligned}
+= \text{coefficient of }x^k \text{ in } [\sum_{i\geq 0} \begin{pmatrix}n\\i\end{pmatrix}][\sum_{j\geq 0}\begin{pmatrix}m\\j\end{pmatrix}] \\
+= \text{coeff of }x^k \text{ in } (x+1)^n(x+1)^m \\
+= \text{coeff of }x^k \text{ in } (x+1)^{n+m} \\
+= \begin{pmatrix}n+m\\k\end{pmatrix}
+\end{aligned}
+$$
+
+## Multinomial Theorem
+
+when $\nlist{a}$ are non-negative integers which sums to n, degine the "multinomial coefficient"
+
+$$
+\begin{pmatrix}n\\ \nlist{a} \end{pmatrix} -= \frac{n!}{a_1!a_2!...a_n!}
+$$
+
+when $k=2$, this is a binomial coefficient. 
+
+## Theorem
+
+$\nlist{a}$ is nonnegative and sum to $n$
+
+$$
+(x_1 + … + x_k)^n = \sum_{\nlist{a}} \begin{pmatrix}n\\ \nlist{a}\end{pmatrix} x_1^{a_1} x_2^{a_2}...x_k^{a_k}
+$$
+
+When $k=2$, this is the binomial theorem
+
+_Proof_
+
+Coefficient of $x_1^{a_1}x_2^{a_2}...x_k^{a_k}$ in $(x_1+...+x_n)^n$
+
+= the number of length $n$ strings with $a_1$ 1s, $a_2$ 2s,...$a_k$ ks. 
+
+$$
+= \begin{pmatrix}n\\ \nlist{a}\end{pmatrix}
+$$
+_Remark_
+
+Let's give another proof that the number of length $n$ strings with $a_1$ 1s, $a_2$ 2s, ..., $a_k$ $k$s $= \begin{pmatrix}n\\ \nlist{a}\end{pmatrix}$.
+
+Count these strings. Choose the positions for the 1s in $\begin{pmatrix}n\\a_1\end{pmatrix}$ ways. Then choose position for 2s in $\begin{pmatrix}n-a_1\\a_2\end{pmatrix}$ ways. Etc. So we get
+
+$$
+\begin{aligned}
+\begin{pmatrix}n\\a_1\end{pmatrix}\begin{pmatrix}n-a_1\\a_2\end{pmatrix}\begin{pmatrix}n-a_1-a_2\\a_3\end{pmatrix} ...\\
+= \frac{n!}{a_1!(n-a_1)!}\frac{(n-a_1)!}{a_2!(n-a_1-a_2)!}\frac{(n_1-a_1-a_2)!}{a_3!(n-a_1-a_2-a_3)!} ...\\
+= \frac{n!}{a_1!a_2!a_3!...} = \begin{pmatrix}n\\ \nlist{a}\end{pmatrix}
+\end{aligned}
+$$
+
+What can we say about $(1+x)^m$ when $m$ is not a positive integer?
+
+Let $m$ be any real number, and $k$ a non-negative integer. Define $\begin{pmatrix}m\\ 0\end{pmatrix}= 1$ and $\begin{pmatrix}m\\k\end{pmatrix} = \frac{m(m-1)...(m-k+1)}{k!}$ for $k\geq 1$.
+
+_Theorem_
+
+$$
+(1+x)^m = \sum_{n \geq 0} \begin{pmatrix}m\\n\end{pmatrix} x^n
+$$
+
+_Note: if $m$ is an integer, this is a finite sum since $\begin{pmatrix}m\\n\end{pmatrix} = 0$ if $n>m$.
+
+_Proof_
+
+if $f(x) = \sum_{n\geq 0} c_n x^n$, $c_n = \frac{1}{n!}f^{(n)}(0)$ (using calculus). So apply this to $f(x) = (1+x)^m$ $n$th derivative of $f(x) = m(m-1)...(m-n+1)(1+x)^{m-n}$. Evaluating this at $x=0$ gives 
+
+$$
+m(m-1)...(m-n+1)
+$$
+
+so coeffiveint of $x^n$ in $(1+x)^m$ is equal to 
+
+$$
+\frac{m(m-1)...(m-n+1)}{n!} = \begin{pmatrix}m\\n\end{pmatrix}
+$$
+
+
+
+### Example
+
+Find power series of $\sqrt{1-4x}$. 
+
+_Note_
+
+$$
+\begin{pmatrix}\frac{1}{2}\\n\end{pmatrix} = \frac{\frac{1}{2}-\frac{1}{2}-\frac{3}{2}...-\frac{(2n+3)}{2}}{n!}
+= \frac{(-1)^{n-1}(2n-3)!!}{2^n n!}
+$$
+
+By the theorem
+
+$$
+\begin{aligned}
+\sqrt{1-4x} = (1-4x)^{\frac{1}{2}} \\
+= \sum_{n>0}\begin{pmatrix}\frac{1}{2}\\-4x^n\end{pmatrix} \\
+= 1-2x - \sum_{n\geq 2} \frac{(2)^{n-1}(2n-3)!!}{ n!}x^n \\
+= 1-2x-\sum_{n\geq 2} \frac{2^n(2n-3)!!(n-1)!}{n!(n-1)!} x^n
+\end{aligned}
+$$
+
+_(Double factorial is **not** factorial done twice. $(2n-3)!!$ is the product of all odd integers from 1 to $2n-3$)_
+
+Note $2^{n-1}(n-1)!$ is equal to product of all even integers from 2 to $2n-2$. so we get 
+
+$$
+1-2x-\sum_{n\geq 2} \frac{2(2n-2)!}{n!(n-1)!} = 1-2x-\sum_{n\geq 2}\frac{2}{n} \begin{pmatrix}2n-2\\n-1\end{pmatrix}
+$$
+

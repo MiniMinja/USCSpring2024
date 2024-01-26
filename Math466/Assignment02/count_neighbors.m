@@ -1,3 +1,13 @@
+% A function that counts the "neighboring cells" of (i, j) by using a
+% nested for loop
+% 
+% Input:
+%
+%   A_g: A (n+1)x(n+1) matrix that contains the gth "frame" of the
+% simulation in Life
+%
+%   i, j: The coordinates (row, col) of A_g that we want to cout the
+% neighboring cells of
 function [c] = count_neighbors(A_g, i, j)
     c = 0;
 

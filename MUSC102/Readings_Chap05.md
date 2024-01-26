@@ -31,7 +31,7 @@ Sounds made by passing air through a tube or some resonator
 
 _ex: trumpet, organ_
 
-* Membraphones
+* Membranophones
 
 Sounds made with vibration of a _membrane_ over some resonator
 
@@ -43,7 +43,7 @@ Sounds made with the vibration of the instrument itselft
 
 _ex: triangles, shakers, hand claps_
 
-* Electronophones
+* Electrophones
 
 Two subcategories: 
 

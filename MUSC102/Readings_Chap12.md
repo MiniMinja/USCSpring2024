@@ -48,7 +48,9 @@ Some countries don't even have the concept of music.
 ## Chapter 2
 
 ethnomusicology
-: the interdisciplinary academic field that draws on musicology, anthropology, other disciplines to study world music
+: ethnology (the study of people) + musicology (the study of music)
+
+_The term is redundant. Musicology = ethnomusicology. But musicology has been generally Western focused._
 
 the musicultural phenomenon
 : the phenomenon where _music as sound_ and _music as culture_ are mutually reinforcing
@@ -81,7 +83,7 @@ _ex)_ What if Mary had a Little Lamb was a sad funeral song?
 ### Identity in Music
 
 identity
-: idea of who they are and what units/distinguishes them ffrom other peoples/entities
+: idea of who they are and what units/distinguishes them from other peoples/entities
 
 Music provides answers to _who am I?_ and _who are we?_. It also provides answers to _who is she/he?_ and _who are they?_.
 
@@ -92,6 +94,7 @@ vocables
 (_ex_ scatting)
 
 #### Societies
+_not doing things alone_
 
 society
 : group of persons regarded as forming as single community of related interdependent individuals
@@ -101,9 +104,13 @@ social institutions
 
 Focus is the impact of musicians/musical institutions on societies. (_ex_ Bali's gemelan club. First male only, now women can play too). 
 
+_"imagined communities" - Benedict Anderson published a book. Because of mass media, we get the sense of what community is and what community is doing. (ex: US army, we imagine US but we've never met all of US)_
+
 #### Cultures
 
 society is defined by its social institutions, **culture** is defined by its collective worldview shared by its members. Cultures are rooted in beliefs, ideas, and practices.
+
+_Culture is broader, umbrella. Society builds institutions to enact those values_
 
 _Example_: belenganjur performers are done by male because it is believed it's to ward off evil spirits and males have the strength to do so. The government allowed for women to participate in belenganjur groups of their own but I Wayan Beratha views this as reprehensible. 
 
@@ -135,7 +142,7 @@ diaspora
 
 _ex_ Jewish, African, Irish diaspora
 
-And then there's **virtual communities* (people online)
+And then there's **virtual communities** (people online)
 
 ### The Individual in music
 
